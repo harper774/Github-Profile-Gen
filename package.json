@@ -1,0 +1,24 @@
+{
+  "name": "monashbootcampweek7",
+  "version": "1.0.0",
+  "description": "Monash Bootcamp for Week 7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mankinchi/MonashBootcampWeek7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mankinchi/MonashBootcampWeek7/issues"
+  },
+  "homepage": "https://github.com/mankinchi/MonashBootcampWeek7#readme",
+  "dependencies": {
+    "github-api": "^3.3.0",
+    "inquirer": "^7.0.0",
+    "pdf-creator-node": "^1.3.0"
+  }
+}
