@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <title>This is Git Hub User Page</title>
+
+    <style>
+        .card {
+            background-color: ${color};
+        }
+        .panel-block {
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <section class="hero is-medium is-dark is-bold">
+    <section class="hero is-medium is-bold is-`+color+`">
         <div class="hero-body" style="padding: 50px">
             <div class="container has-text-centered">
                 <h1 class="title">
@@ -40,6 +49,8 @@
                     <a href=${profile.blog}>
                         Blog
                     </a>
+                    <br><br>
+                    <h>${profile.bio}</h>
                 </h2>
             </div>
         </div>
@@ -49,9 +60,22 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
-                    <div class="card">
+                    <article class="panel is-`+color+`">
+                        <p class="panel-heading has-text-centered">
+                                Public Repositories
+                        </p>
+                        <div class="panel-block">
+                            <a class="panel-block is-active has-text-centered">
+                                <span class="panel-icon">
+                                    <i class="fas fa-book" aria-hidden="true"></i>
+                                </span>
+                                ${profile.public_repos}
+                            </a>
+                        </div>                          
+                    </article>
+                    <!-- <div class="card">
                         <header class="card-header">
-                            <p class="card-header-title is-centered">
+                            <p class="card-header-title has-text-centered">
                             Public Repositories
                             </p>
                         </header>
@@ -60,15 +84,28 @@
                                 ${profile.public_repos}
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
-                    <div class="card">
+                    <article class="panel is-`+color+`">
+                        <p class="panel-heading has-text-centered">
+                                Github Stars
+                        </p>
+                        <div class="panel-block">
+                            <a class="panel-block is-active has-text-centered">
+                                <span class="panel-icon">
+                                    <i class="fas fa-book" aria-hidden="true"></i>
+                                </span>
+                                ${repos.length}
+                            </a>
+                        </div>                          
+                    </article>
+                    <!-- <div class="card">
                         <header class="card-header">
-                            <p class="card-header-title is-centered">
+                            <p class="card-header-title has-text-centered">
                                 GitHub Stars
                             </p>
                         </header>
@@ -77,15 +114,28 @@
                                 ${repos.length}
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
-                    <div class="card">
+                    <article class="panel is-`+color+`">
+                        <p class="panel-heading has-text-centered">
+                                Followers
+                        </p>
+                        <div class="panel-block">
+                            <a class="panel-block is-active has-text-centered">
+                                <span class="panel-icon">
+                                    <i class="fas fa-book" aria-hidden="true"></i>
+                                </span>
+                                ${profile.followers}
+                            </a>
+                        </div>                          
+                    </article>
+                    <!-- <div class="card">
                         <header class="card-header">
-                            <p class="card-header-title is-centered">
+                            <p class="card-header-title has-text-centered">
                                 Followers
                             </p>
                         </header>
@@ -94,15 +144,28 @@
                                 ${profile.followers}
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
-                    <div class="card">
+                    <article class="panel is-`+color+`">
+                        <p class="panel-heading has-text-centered">
+                                Following
+                        </p>
+                        <div class="panel-block">
+                            <a class="panel-block is-active has-text-centered">
+                                <span class="panel-icon">
+                                    <i class="fas fa-book" aria-hidden="true"></i>
+                                </span>
+                                ${profile.following}
+                            </a>
+                        </div>                          
+                    </article>
+                    <!-- <div class="card">
                         <header class="card-header">
-                            <p class="card-header-title is-centered">
+                            <p class="card-header-title has-text-centered">
                                 Following
                             </p>
                         </header>
@@ -111,7 +174,7 @@
                                 ${profile.following}
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
