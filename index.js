@@ -59,7 +59,10 @@ inquirer
         //the number of followings, and the company's name,
         //the location, the link to github page and blog
         ghUser.getProfile(function(err, profile) {
-            if(err) console.log(err);
+            if(err) {
+                console.log(err);
+                console.log("Please enter a valid Github Username!");
+            }
             //listStarredRepos can return all the stared repos
             //use .length to get the number of stared repos
             const userLocation = "https://www.google.com/maps/place/"+profile.location;
