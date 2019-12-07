@@ -62,6 +62,7 @@ inquirer
             if(err) console.log(err);
             //listStarredRepos can return all the stared repos
             //use .length to get the number of stared repos
+            const userLocation = "https://www.google.com/maps/place/"+profile.location;
             ghUser.listStarredRepos(function(err, repos) {
                 if(err) console.log(err);
                 HTMLContent = `
@@ -103,7 +104,7 @@ inquirer
                                     <br><br>
 
                                     <i class="fas fa-location-arrow"></i> 
-                                    <a href=${profile.location}>
+                                    <a href=${userLocation}>
                                         ${profile.location}
                                     </a>
                                     &nbsp;
