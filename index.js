@@ -6,6 +6,8 @@ const GitHub = require('github-api');
 const path = require("path");
 //use puppeteer to convert to PDF
 const puppeteer = require('puppeteer');
+//get authentication for github-api
+const auth = require("./auth.js");
 
 inquirer
     .prompt([
@@ -25,11 +27,11 @@ inquirer
             }
         ])
     .then(function({ username,color }) {
-        console.log(color);
         var gh = new GitHub({
-            username: "harper774",
-            password: "lyy999774LYY"
+            username: auth.username,
+            password: auth.password
         });
+        console.log("Please wait for pdf to be generated...");
         switch (color){
             case "olive green":
                 color = "primary";
@@ -56,7 +58,6 @@ inquirer
                 color = "dark";
                 break;
         }
-        console.log(color);
         const ghUser = gh.getUser(username); 
         //getProfile can return the username, the number of followers,
         //the number of followings, and the company's name,
