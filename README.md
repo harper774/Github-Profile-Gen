@@ -5,7 +5,7 @@ This is an application that can be used to generate a pdf based on the
 user's github name and color-selection
 
 Instruction:
-1. run node.js
+1. run node index.js
 2. enter the user's github username
 3. select the color style that you'd like to have
 4. open the Github_Profile.pdf to see the magic!
