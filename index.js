@@ -274,32 +274,6 @@ inquirer
                 await page.pdf({path: 'Github_profile.pdf', format: 'A4', printBackground: true});
                 await browser.close();
                 })();
-                
-                // const html = fs.readFileSync('index.html', 'utf8');
-                // const options = {
-                //     format: "A3",
-                //     orientation: "portrait",
-                //     border: "10mm"
-                // };
-                // const users = [
-                // ]
-                // const document = {
-                //     html: html,
-                //     //although there is nothing in the users,
-                //     //but deleting it will incur errors
-                //     data: {
-                //         users: users
-                //     },
-                //     path: "./Github_Profile.pdf"
-                // };
-
-                // pdf.create(document, options)
-                // .then(res => {
-                //     console.log(res)
-                // })
-                // .catch(error => {
-                //     console.error(error)
-                // });
             });           
         });
     });
