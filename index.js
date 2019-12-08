@@ -2,7 +2,10 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 //use github-api to get the required info for the pdf
 const GitHub = require('github-api');
-const pdf = require("pdf-creator-node");
+//use path to get the local file address
+const path = require("path");
+//use puppeteer to convert to PDF
+const puppeteer = require('puppeteer');
 
 inquirer
     .prompt([
@@ -257,31 +260,46 @@ inquirer
                     if(err) console.log(err);
                     console.log("Saved to index.html!");
                 });
-                const html = fs.readFileSync('index.html', 'utf8');
-                const options = {
-                    format: "A3",
-                    orientation: "portrait",
-                    border: "10mm"
-                };
-                const users = [
-                ]
-                const document = {
-                    html: html,
-                    //although there is nothing in the users,
-                    //but deleting it will incur errors
-                    data: {
-                        users: users
-                    },
-                    path: "./Github_Profile.pdf"
-                };
+                
+                //the following process is based on the API docs on 
+                //https://github.com/puppeteer/puppeteer/blob/v2.0.0/docs/api.md
+                (async () => {
+                const browser = await puppeteer.launch();
+                const page = await browser.newPage();
+                //get the local address of the index.html
+                const htmlpath = path.join("file://", process.cwd(), "index.html");
+                await page.goto(htmlpath, {waitUntil: 'networkidle2'});
+                //printBackground is default set to false
+                //it has to be set to true or the background will be be white
+                await page.pdf({path: 'Github_profile.pdf', format: 'A4', printBackground: true});
+                await browser.close();
+                })();
+                
+                // const html = fs.readFileSync('index.html', 'utf8');
+                // const options = {
+                //     format: "A3",
+                //     orientation: "portrait",
+                //     border: "10mm"
+                // };
+                // const users = [
+                // ]
+                // const document = {
+                //     html: html,
+                //     //although there is nothing in the users,
+                //     //but deleting it will incur errors
+                //     data: {
+                //         users: users
+                //     },
+                //     path: "./Github_Profile.pdf"
+                // };
 
-                pdf.create(document, options)
-                .then(res => {
-                    console.log(res)
-                })
-                .catch(error => {
-                    console.error(error)
-                });
+                // pdf.create(document, options)
+                // .then(res => {
+                //     console.log(res)
+                // })
+                // .catch(error => {
+                //     console.error(error)
+                // });
             });           
         });
     });
