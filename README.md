@@ -20,4 +20,4 @@ display in a more user-friendly way.
 Further Improvement:
 In the card display, the number could not made to be centered, even though in the HTML, they are centered.
 However, no matter what I do to change the style, they are still alighed to left in pdf.
-Still working on it.
+Still working on it----already solved the problem
