@@ -84,6 +84,7 @@ inquirer
                     <title>This is Git Hub User Page</title>
 
                     <style>
+                        /* this is to make the number in the block to align to the center */
                         .panel-block {
                             justify-content: center;
                         }
