@@ -5,13 +5,11 @@ This is an application that can be used to generate a pdf based on the
 user's github name and color-selection
 
 Instruction:
-1. run npm install inquirer
-2. run npm install github-api
-3. run npm install puppeteer
-4. run node index.js
-5. enter the user's github username
-6. select the color style that you'd like to have
-7. open the Github_Profile.pdf to see the magic!
+1. run npm install
+2. run node index.js
+3. enter the user's github username
+4. select the color style that you'd like to have
+5. open the Github_Profile.pdf to see the magic!
 
 About the color-selection:
 The reason why I chooese not to let the user input their favourite color
